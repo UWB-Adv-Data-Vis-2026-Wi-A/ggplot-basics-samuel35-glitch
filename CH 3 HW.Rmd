@@ -33,6 +33,9 @@ p + geom_point(mapping = aes(color = continent)) +
     geom_smooth(method = "loess") +
     scale_x_log10()
 
+ggsave(filename = "my_figure.pdf")
+
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
