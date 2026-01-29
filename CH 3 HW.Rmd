@@ -36,6 +36,7 @@ p + geom_point(mapping = aes(color = continent)) +
 ggsave(filename = "my_figure.pdf")
 
 
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
