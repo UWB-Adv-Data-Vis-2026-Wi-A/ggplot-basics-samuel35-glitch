@@ -31,7 +31,7 @@ plot(pressure)
 p <- ggplot(data = gapminder, mapping = aes(x = pop, y = lifeExp))
 p + geom_smooth(mapping = aes(color = continent)) +
     geom_point(method = "loess") +
-    scale_x_log10()
+    scale_x_sqrt()
     
 
 ggsave(filename = "my_figure.pdf")
