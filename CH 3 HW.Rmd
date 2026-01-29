@@ -1,0 +1,46 @@
+---
+title: "GGPLOT PT99"
+author: "Samuel Lemma"
+date: "2026-01-29"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gapminder)
+```
+
+## My First Figure 3.4
+```{r gapminder}
+p <- ggplot(data = gapminder,
+           mapping = aes(x = gdpPercap,
+                         y = lifeExp))
+p + geom_point()
+```
+
+
+
+## Figure 3.13
+
+:
+
+```{r pressure, echo=FALSE, fig.width = 12, fig.height = 9}
+plot(pressure)
+p <- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap,
+                          y = lifeExp,
+                          color = year,
+                          fill = continent))
+p + geom_point() +
+    geom_smooth(method = "loess") +
+    scale_x_log10()
+
+ggsave(filename = "my_figure.pdf")
+
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
